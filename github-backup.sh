@@ -23,7 +23,7 @@ tar zcf "$BACKUP_FILE" "$TEMP_DIR"
 rm -rf "$TEMP_DIR"
 
 # Delete backup files in dest older than 5 days. Ignore errors.
-find "${DEST}/github_${USER}_*" -mtime +5 -exec rm {} \; || true
+find "${DEST}/github_${USER}_"* -mtime +5 -exec rm {} \; || true
 
 # Move file to destination
 mv -f "$BACKUP_FILE" "$DEST"
